@@ -55,6 +55,7 @@ public class Weather {
 		if (mainMap.get("temp") instanceof BigDecimal) {
 			temp = ((BigDecimal) mainMap.get("temp")).doubleValue();
 		} else {
+//			temp = (double) mainMap.get("temp");
 			temp = (double) mainMap.get("temp");
 		}
 		String plusOrMunis = temp >= 1 ? "+" : "";
@@ -68,7 +69,7 @@ public class Weather {
 		String plusOrMunis2 = description1 >= 1 ? "+" : "";
 		String description2;
 		if (weather3.get("description") instanceof Object) {
-			description2 =  (String) ((Object) weather3.get("description"));
+			description2 =  (String) (weather3.get("description"));
 		} else {
 			description2 = (String) mainMap.get("feels_like");
 		}

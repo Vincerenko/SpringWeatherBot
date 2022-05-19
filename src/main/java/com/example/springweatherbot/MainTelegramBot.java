@@ -48,8 +48,10 @@ public class MainTelegramBot extends TelegramLongPollingBot {
                     weather = Weather.getWeather(message.getText());
                     sendMessage.setText(weather);
                 } catch (IOException e) {
-                    //e.printStackTrace();
                     sendMessage.setText("Нет такого города!");
+                }
+                catch (ClassCastException e) {
+                    sendMessage.setText("Что то на сервере пошло не так, какие то не лады с этим городом... попробуйте еще раз =)");
                 }
 
                 try {
