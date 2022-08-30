@@ -50,7 +50,8 @@ public class MainTelegramBot extends TelegramLongPollingBot {
                 } catch (IOException e) {
                     sendMessage.setText("Нет такого города!");
                 }
-                catch (ClassCastException e) {
+                catch (Throwable e) {
+                    e.printStackTrace();
                     sendMessage.setText("Что то на сервере пошло не так, какие то не лады с этим городом... попробуйте еще раз =)");
                 }
 

@@ -55,7 +55,6 @@ public class Weather {
 		if (mainMap.get("temp") instanceof BigDecimal) {
 			temp = ((BigDecimal) mainMap.get("temp")).doubleValue();
 		} else {
-//			temp = (double) mainMap.get("temp");
 			temp = (double) mainMap.get("temp");
 		}
 		String plusOrMunis = temp >= 1 ? "+" : "";
